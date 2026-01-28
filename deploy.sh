@@ -3,7 +3,7 @@
 # 定义镜像名称和容器名称
 IMAGE_NAME="chenjianru-portfolio"
 CONTAINER_NAME="portfolio-container"
-PORT=80
+PORT=8080  # 修改为 8080 避免和系统 80 端口冲突
 
 echo "🚀 开始部署流程..."
 
