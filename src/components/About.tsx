@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Section from './Section';
@@ -144,36 +144,40 @@ export default function About() {
   }, []);
 
   return (
-    <Section id="about" ref={containerRef} className="bg-surface/30 backdrop-blur-sm px-6 py-20 md:py-32">
-      <div className="max-w-5xl w-full">
+    <Section
+      id="about"
+      ref={containerRef}
+      className="bg-surface/30 px-6 py-20 backdrop-blur-sm md:py-32"
+    >
+      <div className="w-full max-w-5xl">
         <h2
           ref={titleRef}
-          className="text-3xl md:text-5xl font-bold mb-12 md:mb-16 text-center text-primary"
+          className="text-primary mb-12 text-center text-3xl font-bold md:mb-16 md:text-5xl"
         >
           个人经历 & 技能
         </h2>
 
-        <div className="space-y-12 md:space-y-16 max-w-4xl mx-auto">
+        <div className="mx-auto max-w-4xl space-y-12 md:space-y-16">
           {experiences.map((exp, index) => (
             <div
               key={index}
               ref={(el) => (timelineRefs.current[index] = el)}
-              className="relative p-6 md:p-8 rounded-sm border border-white/5 hover:border-white/10 transition-all duration-300 bg-surface/20 hover:bg-surface/30"
+              className="bg-surface/20 hover:bg-surface/30 relative rounded-sm border border-white/5 p-6 transition-all duration-300 hover:border-white/10 md:p-8"
             >
-              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4">
-                <h3 className="text-lg md:text-xl font-bold text-primary group-hover:text-accent transition-colors order-2 md:order-1 mt-2 md:mt-0">
+              <div className="mb-4 flex flex-col md:flex-row md:items-baseline md:justify-between">
+                <h3 className="text-primary group-hover:text-accent order-2 mt-2 text-lg font-bold transition-colors md:order-1 md:mt-0 md:text-xl">
                   {exp.title}
                 </h3>
-                <span className="text-secondary text-xs font-mono tracking-wider order-1 md:order-2 block bg-white/5 px-2 py-1 rounded w-fit md:bg-transparent md:px-0 md:py-0">
+                <span className="text-secondary order-1 block w-fit rounded bg-white/5 px-2 py-1 font-mono text-xs tracking-wider md:order-2 md:bg-transparent md:px-0 md:py-0">
                   {exp.year}
                 </span>
               </div>
-              
-              <h4 className="text-secondary mb-4 md:mb-6 text-sm font-medium border-l-2 border-accent pl-3">
+
+              <h4 className="text-secondary border-accent mb-4 border-l-2 pl-3 text-sm font-medium md:mb-6">
                 {exp.company}
               </h4>
-              
-              <div className="text-secondary text-sm leading-relaxed opacity-80 pl-3">
+
+              <div className="text-secondary pl-3 text-sm leading-relaxed opacity-80">
                 {exp.description}
               </div>
             </div>
@@ -182,12 +186,21 @@ export default function About() {
 
         {/* Education Section */}
         <div className="mt-20 md:mt-24">
-          <h3 className="text-2xl font-bold text-center mb-8 md:mb-12 text-primary">教育背景</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+          <h3 className="text-primary mb-8 text-center text-2xl font-bold md:mb-12">
+            教育背景
+          </h3>
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
             {education.map((edu, index) => (
-              <div key={index} className="p-6 md:p-8 rounded-sm border border-white/5 hover:border-white/10 transition-colors duration-300 bg-surface/20">
-                <span className="text-secondary text-xs font-mono mb-3 block">{edu.year}</span>
-                <h4 className="text-base md:text-lg font-bold text-primary mb-2">{edu.school}</h4>
+              <div
+                key={index}
+                className="bg-surface/20 rounded-sm border border-white/5 p-6 transition-colors duration-300 hover:border-white/10 md:p-8"
+              >
+                <span className="text-secondary mb-3 block font-mono text-xs">
+                  {edu.year}
+                </span>
+                <h4 className="text-primary mb-2 text-base font-bold md:text-lg">
+                  {edu.school}
+                </h4>
                 <p className="text-secondary text-sm">{edu.major}</p>
               </div>
             ))}
@@ -195,12 +208,17 @@ export default function About() {
         </div>
 
         <div className="mt-20 md:mt-24">
-          <h3 className="text-2xl font-bold text-center mb-8 md:mb-12 text-primary">专业技能</h3>
-          <div ref={skillsRef} className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          <h3 className="text-primary mb-8 text-center text-2xl font-bold md:mb-12">
+            专业技能
+          </h3>
+          <div
+            ref={skillsRef}
+            className="mx-auto flex max-w-3xl flex-wrap justify-center gap-3"
+          >
             {skills.map((skill, index) => (
               <span
                 key={index}
-                className="px-4 py-2 md:px-5 md:py-2 rounded-full bg-surface border border-white/5 text-secondary text-xs md:text-sm hover:text-primary hover:border-white/20 transition-all duration-300 cursor-default"
+                className="bg-surface text-secondary hover:text-primary cursor-default rounded-full border border-white/5 px-4 py-2 text-xs transition-all duration-300 hover:border-white/20 md:px-5 md:py-2 md:text-sm"
               >
                 {skill}
               </span>

@@ -1,5 +1,4 @@
-import React, { ReactNode, forwardRef } from 'react';
-import { clsx } from 'clsx';
+import { ReactNode, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 interface SectionProps {

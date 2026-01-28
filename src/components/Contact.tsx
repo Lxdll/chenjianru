@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiMail } from 'react-icons/fi';
 import Section from './Section';
 
