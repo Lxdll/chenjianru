@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="faceGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:#FFCC33;stop-opacity:1" />
+      <stop offset="90%" style="stop-color:#E6AC00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#CC9900;stop-opacity:1" />
+    </radialGradient>
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+      <feOffset dx="0" dy="2" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Uniform Body/Shoulders -->
+  <path d="M106 380 Q256 360 406 380 L406 512 L106 512 Z" fill="#003366" />
+  <!-- Shirt Collar -->
+  <path d="M180 380 L256 460 L332 380" fill="#ADD8E6" />
+  <!-- Tie -->
+  <path d="M256 460 L236 512 L276 512 Z" fill="#1A1A1A" />
+
+  <!-- Head (Chubby Cheeks) -->
+  <ellipse cx="256" cy="260" rx="160" ry="140" fill="url(#faceGradient)" />
+  <circle cx="160" cy="320" r="50" fill="url(#faceGradient)" /> <!-- Left Cheek Puff -->
+  <circle cx="352" cy="320" r="50" fill="url(#faceGradient)" /> <!-- Right Cheek Puff -->
+
+  <!-- Muzzle (Light Area) -->
+  <path d="M196 300 Q256 280 316 300 Q336 360 256 380 Q176 360 196 300 Z" fill="#FFF8DC" />
+
+  <!-- Ears -->
+  <circle cx="120" cy="180" r="40" fill="#E6AC00" />
+  <circle cx="120" cy="180" r="25" fill="#4B3621" />
+  <circle cx="392" cy="180" r="40" fill="#E6AC00" />
+  <circle cx="392" cy="180" r="25" fill="#4B3621" />
+
+  <!-- Spots -->
+  <circle cx="140" cy="240" r="8" fill="#4B3621" />
+  <circle cx="120" cy="280" r="6" fill="#4B3621" />
+  <circle cx="372" cy="240" r="8" fill="#4B3621" />
+  <circle cx="392" cy="280" r="6" fill="#4B3621" />
+  <circle cx="256" cy="160" r="5" fill="#4B3621" />
+
+  <!-- Eyes -->
+  <g>
+    <ellipse cx="210" cy="240" rx="25" ry="30" fill="white" />
+    <circle cx="210" cy="240" r="12" fill="#8B4513" /> <!-- Brown Eyes -->
+    <circle cx="210" cy="240" r="5" fill="black" />
+    <circle cx="214" cy="236" r="3" fill="white" opacity="0.8" />
+
+    <ellipse cx="302" cy="240" rx="25" ry="30" fill="white" />
+    <circle cx="302" cy="240" r="12" fill="#8B4513" />
+    <circle cx="302" cy="240" r="5" fill="black" />
+    <circle cx="306" cy="236" r="3" fill="white" opacity="0.8" />
+  </g>
+
+  <!-- Nose -->
+  <path d="M236 320 Q256 310 276 320 Q256 350 236 320 Z" fill="#FF9999" />
+
+  <!-- Mouth -->
+  <path d="M256 350 Q236 365 216 355" fill="none" stroke="#4B3621" stroke-width="3" stroke-linecap="round" />
+  <path d="M256 350 Q276 365 296 355" fill="none" stroke="#4B3621" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Police Hat -->
+  <path d="M136 160 Q256 100 376 160 L386 200 Q256 180 126 200 Z" fill="#003366" filter="url(#softShadow)" />
+  <!-- Hat Badge -->
+  <path d="M256 130 L270 150 L256 170 L242 150 Z" fill="#FFD700" stroke="#DAA520" stroke-width="1" />
+</svg>
